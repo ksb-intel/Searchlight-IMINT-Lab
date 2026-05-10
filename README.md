@@ -5,18 +5,18 @@
 <img width="2327" height="892" alt="image" src="https://github.com/user-attachments/assets/fa7ecdd1-6796-4fd3-82f3-3a11e9fd369b" />
 
 <br>
-A hands-on walkthrough of the TryHackMe room **Searchlight - IMINT**, exploring the disciplines of Image Intelligence (IMINT) and Geospatial Intelligence (GEOINT). Each task presents an image and asks you to geolocate it using visual analysis, reverse image search, and open-source tools — no credentials, no systems access, just a sharp eye and a browser.
+A hands-on write-up of the TryHackMe room **Searchlight - IMINT**, involving Image Intelligence (IMINT) and Geospatial Intelligence (GEOINT). Each task presents an image to geolocate utilizing visual analysis, reverse image search, and other open-source tools.
 
 
 ## ⚠️ Disclaimer
 
-All reconnaissance in this lab was conducted passively using publicly available information only. No systems were accessed, no authentication was attempted, and no data was exfiltrated. This lab is for educational purposes and should not be used for any unauthorized or malicious activity.
+All reconnaissance in this lab was conducted passively using publicly available information. This lab is for educational purposes and should not be used for unauthorized or malicious activity.
 
 ---
 
 ## What is IMINT / GEOINT?
 
-**IMINT (Imagery Intelligence)** is the practice of extracting actionable intelligence from images and video. **GEOINT (Geospatial Intelligence)** extends this to geographic context by identifying where something is, when it happened, and what the surroundings tell us.
+**IMINT (Imagery Intelligence)** is the practice of extracting actionable intelligence from images and videos. **GEOINT (Geospatial Intelligence)** extends this to geographic context by identifying where something is, when it happened, and what the surroundings tell us.
 
 According to GEOINT expert [Benjamin Strick](https://twitter.com/BenDoBrown), there are five core elements to consider when analyzing an image:
 
@@ -62,7 +62,7 @@ According to GEOINT expert [Benjamin Strick](https://twitter.com/BenDoBrown), th
 
 ## Executive Summary
 
-This lab demonstrates the discipline of IMINT through a series of progressively challenging geolocation tasks. Using reverse image search, visual analysis of foreground and background elements, and open-source corroboration, each image was successfully geolocated,  from a well-known London shopping strip to a contemporary sculpture in Oslo to a hotel overlooking the Singapore River. The most analytically demanding tasks required layered inference: using one identifiable text fragment to narrow geography, then cross-referencing architectural features with Street View to confirm. The lab reinforces that IMINT  it is about disciplined observation and the use of tools.
+This lab demonstrates the utilization of IMINT through a series of geolocation tasks. Using reverse image search, visual analysis of foreground and background elements, and open-source corroboration, each image was successfully geolocated,  from a well-known London shopping strip to a contemporary sculpture in Oslo to a hotel overlooking the Singapore River. The most analytically demanding tasks required layered inference: using one identifiable text fragment to narrow geography, then cross-referencing architectural features with Street View to confirm. The lab reinforces IMINT and GEOINT practices.
 
 ---
 
@@ -97,7 +97,7 @@ The Fornarina store itself was a notable piece of retail design — designed by 
 
 <br>
 
-This is a useful reminder that IMINT can inform when not just what.
+This challenge demonstrates IMINT involves making time-based observations as well as locational.
 
 ---
 
