@@ -5,7 +5,7 @@
 <img width="2327" height="892" alt="image" src="https://github.com/user-attachments/assets/fa7ecdd1-6796-4fd3-82f3-3a11e9fd369b" />
 
 <br>
-A hands-on write-up of the TryHackMe room **Searchlight - IMINT**, involving Image Intelligence (IMINT) and Geospatial Intelligence (GEOINT). Each task presents an image to geolocate utilizing visual analysis, reverse image search, and other open-source tools.
+A hands-on write-up of the TryHackMe room Searchlight - IMINT, involving Image Intelligence (IMINT) and Geospatial Intelligence (GEOINT). Each task presents an image to geolocate utilizing visual analysis, reverse image search, and other open-source tools.
 
 
 ## ⚠️ Disclaimer
