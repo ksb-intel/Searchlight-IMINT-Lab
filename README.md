@@ -5,7 +5,7 @@
 <img width="2327" height="892" alt="image" src="https://github.com/user-attachments/assets/fa7ecdd1-6796-4fd3-82f3-3a11e9fd369b" />
 
 <br>
-A hands-on write-up of the TryHackMe room Searchlight - IMINT, involving Image Intelligence (IMINT) and Geospatial Intelligence (GEOINT). Each task presents an image to geolocate utilizing visual analysis, reverse image search, and other open-source tools.
+A write-up of the TryHackMe room Searchlight - IMINT, involving Image Intelligence (IMINT) and Geospatial Intelligence (GEOINT). Each task presents an image to geolocate utilizing visual analysis, reverse image search, and other open-source tools.
 
 
 ## ⚠️ Disclaimer
@@ -62,7 +62,7 @@ According to GEOINT expert [Benjamin Strick](https://twitter.com/BenDoBrown), th
 
 ## Executive Summary
 
-This lab demonstrates the utilization of IMINT through a series of geolocation tasks. Using reverse image search, visual analysis of foreground and background elements, and open-source corroboration, each image was successfully geolocated,  from a well-known London shopping strip to a contemporary sculpture in Oslo to a hotel overlooking the Singapore River. The most analytically demanding tasks required layered inference: using one identifiable text fragment to narrow geography, then cross-referencing architectural features with Street View to confirm. The lab reinforces IMINT and GEOINT practices.
+This lab demonstrates the utilization of IMINT through a series of geolocation tasks. Using reverse image search, visual analysis of foreground and background elements, and open-source corroboration, each image was successfully geolocated. The most analytically demanding tasks required layered inference: using one identifiable text fragment to narrow geography, then cross-referencing architectural features with Street View to confirm.
 
 ---
 
@@ -78,20 +78,23 @@ This lab demonstrates the utilization of IMINT through a series of geolocation t
 
 **Answer: Carnaby Street, London, United Kingdom**
 
-The "Welcome to Carnaby Street" arch visible in the image made this one immediately identifiable. Carnaby Street is a well-known pedestrian shopping strip in the Soho district of London. However, the image is not recent — the businesses visible in the foreground, "Fornarina" on the left and "Make Up Store" on the right, are no longer present.
+Clearly we can see this is Carnaby Street from the arched signage. After searching the location on Google, the street is a well-known shopping strip located in London, United Kingdom. This image specifically is not recent however, as the businesses "Fornarina" on the left and "Make Up Store" on the right are no longer present, as seen below. 
 
 <img width="1352" height="826" alt="image" src="https://github.com/user-attachments/assets/ac3934e5-4d11-4e2e-84e1-da3a77c54833" />
 
 
 <br>
 
-Cross-referencing with Google Street View history confirmed this. A July 2012 capture shows both businesses still operating at this location. By October 2017 they are gone, placing the original image somewhere before 2017.
+This is the best image found to demonstrate the two buisnesses are changed, additionally, on Google Maps they are no longer listed. dentifying the building on the left that connects to the "Carnaby Jubilee" sign closely resembles the second story business on the left side of the original image. The business to the right has the same greenery above the storefront, and the building architecture appears the same as well. 
+
 
 <img width="1180" height="715" alt="image" src="https://github.com/user-attachments/assets/1790503b-5efb-4a9d-a699-38e3d4fde31c" />
 
 <br>
 
-The Fornarina store itself was a notable piece of retail design — designed by Giorgio Borruso and photographed by Benny Chan, it won the 2007 AIA LA Design Award for its high-tech, experiential interior.
+Looking at the older dates on this street view, we can find a capture taken in Jul 2012 with the same two businesses "Fornarina" on the left and "Make Up Store," which confirms that this is the correct location. The next image is dated in Oct 2017, with these specific businesses gone indicating that the original image was taken at least before 2017. 
+
+The Fornarina store itself was notable for it's interrior design, featuring a high-tech, experimental, modern, and feminine architecture, winning awards like the 2007 AIA LA Design Award. The store was designed by Giorgio Borruso and the picture below was photographed by Benny Chan.
 
 <img width="432" height="552" alt="image" src="https://github.com/user-attachments/assets/a48ed474-2c66-442e-b993-c69eac184ad3" />
 
@@ -121,13 +124,13 @@ This challenge demonstrates IMINT involves making time-based observations as wel
 
 <br>
 
-After reverse image searching the image, results for **Piccadilly Circus Underground Station** populated immediately across multiple sources including Wikipedia and Instagram. The station's distinctive entrance structure — black iron railings, globe lamp posts, and the red Underground roundel — is visually distinct enough to confirm without ambiguity.
+After reverse image searching the image, results for **Piccadilly Circus Underground Station** located in London, United Kingdom populated immediately across multiple sources.
 
 <img width="1193" height="870" alt="image" src="https://github.com/user-attachments/assets/106eaecf-e994-44d8-ab76-7a73541d6ac5" />
 
 <br>
 
-This task introduces the concept of **context questions** — geolocation is step one, but analysts often need to answer follow-on questions about a location. Station opening year and platform count came from the Wikipedia page for Piccadilly Circus tube station.
+This task introduces **contextual questions**  by provding more information beyond the physical location of a target. 
 
 ---
 
@@ -147,20 +150,19 @@ This task introduces the concept of **context questions** — geolocation is ste
 
 <br>
 
-The image shows an overhead view of a food court. The key identifier is a banner in the background reading **"YVR CONNECTS"** and the domain `YVR.CA`. Running `site:YVR.CA` as a Google dork confirmed this as the Vancouver International Airport.
+The image shows an overhead view of a food court. The key identifier is a banner in the back corner of the food court reading **"YVR CONNECTS"** and the domain `YVR.CA`. Running `site:YVR.CA` as a Google dork confirmed this as the Vancouver International Airport. Additionally we can see in the top left, a person dragging a suitcase, indicating this location as an airport terminal. However, that information without the banner would make it difficult to analyze which airport this is alone (without the use of reverse image searches). 
 
 <img width="1112" height="863" alt="image" src="https://github.com/user-attachments/assets/3218bad6-af90-4324-a7b3-ba6cc9d356e8" />
 
 <br>
 
-From there, identifying the city and country was straightforward — VYR is located in Richmond, BC, not Vancouver proper, which is worth noting. 
-
+Google searching "site:YVR.CA" which brought results from "Vancouver International Airport." From there, identifying the building as the airport and finding the city and country came simply. The Vancouver International Airport is in Richmond, Canada. 
 
 <img width="1095" height="794" alt="image" src="https://github.com/user-attachments/assets/c050fb92-dc96-483a-b44d-54e3432237f3" />
 
 <br>
 
-It's a good example of how a single piece of text in the background of an image can crack the whole geolocation.
+This challenge shows how powerful signage and text can be in geolocation. 
 
 ---
 
@@ -186,31 +188,30 @@ It's a good example of how a single piece of text in the background of an image 
 
 <br>
 
-The first image (overhead food shot) offered no obvious geographic identifiers. The second image was more useful — through the window, faint text reading **"Edinburgh Wollen Mill"** was visible on a red-fronted building across the street. Edinburgh Woolen Mill operates multiple locations across Scotland, so the next step was cross-referencing each location against the architectural features visible in the image.
+The first image (overhead food shot) has no obvious geographic identifiers. The second image contains the only identifyable text reading **"Edinburgh Wollen Mill"**  on the front of a white and red building across the street. Edinburgh Woolen Mill operates multiple locations across the United Kingdom, so the next step was searched all the stores located in Scotland, and cross referecning until one was found that matched the architecture in the image/ 
 
 <img width="850" height="676" alt="image" src="https://github.com/user-attachments/assets/7f0bb2d9-9ff2-4e4e-ac82-5e8c8ffcd90a" />
 
 <br>
 
-The match was found at the **Blairgowrie** location — the distinctive red building confirmed it. 
+The Blairgowrie [location](https://maps.app.goo.gl/67zQuYzqdMz6Z4EUA) matches the provided image with the distinct red architecture. The coffee shop across the street is "The Wee Coffee Shop," which is most definitely the one in the original image.
+
 <img width="1101" height="884" alt="image" src="https://github.com/user-attachments/assets/515879b9-9516-4563-8864-4315fbb566ce" />
 
 <br>
 
-The coffee shop directly across the street is **The Wee Coffee Shop** at 1 Allan St, Blairgowrie. 
+he coffee shop across the street is "The Wee Coffee Shop," which is most likely the one in the original image.
 
 <img width="896" height="888" alt="image" src="https://github.com/user-attachments/assets/a1f763d2-e10a-4a64-bf7b-63f400687a53" />
 
 <br>
 
-The Facebook page for the shop provided the phone number and email address.
+The Wee Coffee Shop's Facebook page had identifiable information for the rest of the questions of this assignment such as phone number, email, and owner's name. 
 
 **<img width="977" height="700" alt="image" src="https://github.com/user-attachments/assets/d1e72f30-7278-40d9-9b40-8e9dbb2ae34e" />
 **
 
 <br>
-
-This task highlights a key IMINT skill: **using partial, indirect text to anchor a geographic search**, then refining with visual corroboration.
 
 ---
 
@@ -230,19 +231,17 @@ This task highlights a key IMINT skill: **using partial, indirect text to anchor
 
 <br>
 
-This task is a pure reverse image search exercise. Running the image through [TinEye](https://tineye.com/) returned only two results — both from other people's lab writeups doing the same exercise. Useful to know, but not useful for answering the question. Pivoting to Google reverse image search via the **RevEye extension** returned results identifying the image as the interior of **Katz's Delicatessen**, a legendary New York deli established in 1888 and famous for its pastrami sandwiches. It's also the filming location for a well-known scene in *When Harry Met Sally*.
+Running the image through [TinEye](https://tineye.com/) returned two results — both from other people's lab writeups doing the same exercise. By reverse image search via the **RevEye extension** on Google, results populated for "Katz's Delicatessen" which is a famous deli found in New York City, popularized for being in *When Harry Met Sally*.
 
 <img width="1243" height="896" alt="image" src="https://github.com/user-attachments/assets/55edee90-9082-46f3-80c7-6303ffbdda39" />
 
 <br>
 
-The second question required one additional search — "katz's deli bon appetit" — which surfaced a Bon Appétit article where deputy editor **Andrew Knowlton** documented working a 24-hour shift at the deli.
+Querying "katz's deli bon appetit" found search results for the editor who worked a 24 hour shift, Andrew Knowlton. 
 
 <img width="953" height="742" alt="image" src="https://github.com/user-attachments/assets/cb219a4f-32d6-4995-9f62-f9f8109ca138" />
 
 <br>
-
-The TinEye result is worth noting as an OSINT artifact: the fact that the image was first indexed in June 2021 and had only two results — both from the same TryHackMe challenge — tells you something about the image's origin and circulation history.
 
 ---
 
@@ -266,19 +265,18 @@ The TinEye result is worth noting as an OSINT artifact: the fact that the image 
 
 <br>
 
-No signage, no text, no street names — qhich leads to a straight image search. Google reverse image search identified the sculpture immediately as **"Rudolph the Chrome Nosed Reindeer"** — a hybrid artwork incorporating a motorcycle body with deer legs and antlers, installed around 2012 in the **Tjuvholmen** (Thief Islet) neighborhood of Oslo near the THE THIEF hotel.
+Since there are no clear signage or text to indicate the geographical location, the only option is to utilize reverse image searches. Google search results show the sculpture is titled *Rudolph the Chrome Nosed Reindeer.* The sculpture was created by  Magne Furuholmen and is located in the Tjuvhilmen neighborhood of Oslo Norway. 
+
 
 <img width="1163" height="774" alt="image" src="https://github.com/user-attachments/assets/3be672ed-82ef-4a12-be1c-6c4d28e08fb4" />
 
 <br>
 
-The photographer's name came from the [Visit Oslo](https://www.visitoslo.com/) interactive outdoor sculpture map, which lists the photo credit as **Kjersti Stensrud / VisitOSLO**.
+The photographer's name came from the [Visit Oslo](https://www.visitoslo.com/) interactive outdoor sculpture map, which lists the photographer credit as Kjersti Stensrud.
 
 <img width="1573" height="741" alt="image" src="https://github.com/user-attachments/assets/4ad4965c-41a3-4837-99fe-0017056721dd" />
 
 <br>
-
-The modern residential architecture visible behind the sculpture, combined with the Nordic urban landscaping aesthetic, was consistent with Scandinavia. 
 
 ---
 
@@ -300,11 +298,13 @@ The modern residential architecture visible behind the sculpture, combined with 
 
 <br>
 
-An initial text search for "Blind Justice Statue" surfaced the Wikipedia page for Lady Justice generally, but didn't pinpoint the specific statue. Reverse image search confirmed both the subject and the specific location — the **Albert V. Bryan US Federal Courthouse** in Alexandria, Virginia.
+An initial text search for "Blind Justice Statue" surfaced the Wikipedia page for Lady Justice, however the exact statue in this image could not be identified. Reverse image search confirms that this figure is indeed Lady Justice. This statue specfiically is located outside  the Albert V. Bryan US Federal Courthouse in Alexandria, Virginia.
 
 <img width="1014" height="728" alt="image" src="https://github.com/user-attachments/assets/fd4b684c-fce8-47d4-b8a1-5266f1392d5b" />
 
 <br>
+
+The building opposite of this statue is The Westin Alexandria Old Town.
 
 <img width="1416" height="889" alt="image" src="https://github.com/user-attachments/assets/56530b89-3d36-4304-8468-1ff59633e059" />
 
@@ -326,9 +326,9 @@ Lady Justice (Latin: *Iustitia*) is an allegorical personification of the moral 
 
 <br>
 
-Videos contain far more extractable data than a single frame. This task introduced [FFmpeg](https://ffmpeg.org/) as a tool for extracting key frames from video for analysis — a technique documented in a [Nixintel writeup](https://nixintel.info/) on OSINT video analysis.
+Videos hold a lot more images that can be analyzed. The lab suggests a [writeup](https://nixintel.info/osint-tools/using-ffmpeg-to-grab-stills-and-audio-for-osint/) by [Nixintel](https://twitter.com/nixintel) on a tool called [FFmpeg](https://ffmpeg.org/), which helps extract key images from videos. 
 
-From the video frames, the text **"Clarke Quay Central"** was visible — a well-known shopping center along the Singapore River. A search for Clarke Quay Central confirmed it's located in Singapore's Clarke Quay district. Looking across the river from Clarke Quay Central in the direction consistent with the video angle, **METT Singapore** — a 5-star hotel — is the likely vantage point.
+From the video we can see the words "Clarke Quay Central" and when searching that reveals a shopping center in Singapore. Across the way, following the video's recorded angle, is a hotel METT Singapore, the likely location of where the video was taken. 
 
 <img width="1516" height="909" alt="image" src="https://github.com/user-attachments/assets/e51b760e-8514-410f-823e-5736b5be27a9" />
 
@@ -346,7 +346,7 @@ The room recommended watching [*A Lesson on Looking*](https://www.ted.com/talks/
 - The **4 A's** framework for visual intelligence: **Assess → Analyze → Articulate → Act**
 - Saying what *isn't* there is often as valuable as what is
 
-The task image associated with this section was "The Castle" (2007) by Jorge Méndez Blake — a full brick wall with a single small book placed at the base, creating a ripple that disturbs the entire wall above it. The piece illustrates how a small, seemingly insignificant element can alter large, established structures. In the context of IMINT: a single data point — a text fragment, a building style, a shadow angle — can shift the analysis.
+The task image associated with this section was "The Castle" (2007) by Jorge Méndez Blake — a full brick wall with a single small book placed at the base, creating a ripple that disturbs the entire wall above it. The piece illustrates how a small, seemingly insignificant element can alter large, established structures. In the context of IMINT: a single data point can shift the analysis.
 
 <img width="998" height="331" alt="image" src="https://github.com/user-attachments/assets/355c62cb-b5dd-4e4b-a782-87a114507b8d" />
 <br>
@@ -358,10 +358,9 @@ The task image associated with this section was "The Castle" (2007) by Jorge Mé
 - Reverse image searching across multiple engines (Google, TinEye, Yandex via RevEye)
 - Visual extraction of geographic indicators from foreground, background, and context
 - Cross-referencing findings with Google Street View historical captures
-- Temporal analysis — using business presence/absence to bracket image dates
+- Temporal analysis, using business presence/absence to bracket image dates
 - Video frame extraction for OSINT analysis
 - Open-source corroboration of geolocation findings
-- Applying the 4 A's framework (Assess, Analyze, Articulate, Act) to analytical problems
 
 ---
 
